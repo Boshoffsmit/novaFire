@@ -2,6 +2,7 @@
 #'
 #' Script for building and training the SVM ibutton fire classification model.
 #'
+#' @details Will require trainingHhs.Rda to create svm_fire_classifier.Rda
 #' @export
 
 # **Funksie gaan verskillend wees vir die 3 van ons**
@@ -12,6 +13,7 @@
 #
 # ---------------------------------------- #
 # start clean
+svm_fire_classifier <- function(){
 rm(list = ls())
 # ---------------------------------------- #
 if (!exists("dropdir")) {dropdir <- "C:/Users/Willem/Desktop/Nova Packages/NovaFire/novaFire/"}
@@ -33,11 +35,18 @@ if (!require(caret)){
         }
 }
 
+if (!require(novaUtils)){
+        devtools::install_github("NovaInstitute/Rpackages/novaUtils")
+        if (!require(novaUtils)){
+                stop("Load package novaUtils manually")
+        }
+}
+
+
 # ---------------------------------------- #
 # source locally required code
 source(paste(novafunctdir, "EOPhhObj.R", sep = ""))
-source(paste(novafunctdir, "move.col.R", sep = ""))
-source(paste(novafunctdir, "archive.R", sep = ""))
+library(novaUtils)
 # ---------------------------------------- #
 # declare script constants
 VERBOSE <- TRUE
@@ -174,3 +183,4 @@ save(model_fire, file = paste(novadatadir, "svm_fire_classifier.Rda", sep=""))
 # ---------------------------------------- #
 # ---------------------------------------- #
 
+}

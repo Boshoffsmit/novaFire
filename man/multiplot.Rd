@@ -11,6 +11,8 @@ multiplot(..., plotlist = NULL, file, cols = 1, layout = NULL)
 
 \item{plotlist}{A list of ggplot objects}
 
+\item{file}{Filename (Not present in this function)}
+
 \item{cols}{Numeric. Number of columns in layout}
 
 \item{layout}{A matrix specifying the layout. If present, 'cols' is ignored}

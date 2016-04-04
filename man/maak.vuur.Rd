@@ -11,6 +11,8 @@ maak.vuur(df, aggr = FALSE, drops = c("fire", "E"), datum.naam = "date",
 \arguments{
 \item{df}{Data frame. Contains fire and temperature data, normally the iButton data}
 
+\item{aggr}{Logical. Initialises date aggregation when TRUE}
+
 \item{drops}{Character vector. Names of the columns to be dropped}
 
 \item{datum.naam}{Character vector. Name of the column containing dates}

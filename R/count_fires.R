@@ -8,7 +8,7 @@
 #' @param firevar Character vector. Name of the column specifying whether a fire is active or not
 #' @param vuurnaam Character vector. Text that correspond to a fire being active
 #' @param groupvar Character vector. An optional grouping variable
-#' @param export
+#' @export
 
 count.fires.per.day <- function(df = NULL,
                         datevar = "date",
@@ -181,10 +181,10 @@ count.fires.per.day.list <- function(ldata = NULL, returnAsSingleDataFrame = FAL
 #'
 #' Uses the count.fire.per.day function while receiving a list. Function returns summarised counts
 #'
-#'  @param lys List containing fire information
-#'  @param groupvar Character vector. Grouping variable that defaults to "year"
-#'  @param ... Arguments to be passed to/from other methods
-#'  @export
+#' @param lys List containing fire information
+#' @param groupvar Character vector. Grouping variable that defaults to "year"
+#' @param ... Arguments to be passed to/from other methods
+#' @export
 
 summarise.fires.per.day.list <- function(lys, groupvar = "yr", ...){
 

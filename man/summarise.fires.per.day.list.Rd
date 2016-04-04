@@ -6,13 +6,14 @@
 \usage{
 summarise.fires.per.day.list(lys, groupvar = "yr", ...)
 }
+\arguments{
+\item{lys}{List containing fire information}
+
+\item{groupvar}{Character vector. Grouping variable that defaults to "year"}
+
+\item{...}{Arguments to be passed to/from other methods}
+}
 \description{
 Uses the count.fire.per.day function while receiving a list. Function returns summarised counts
-}
-\details{
-@param lys List containing fire information
- @param groupvar Character vector. Grouping variable that defaults to "year"
- @param ... Arguments to be passed to/from other methods
- @export
 }
 

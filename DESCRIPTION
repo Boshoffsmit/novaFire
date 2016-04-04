@@ -1,9 +1,9 @@
 Package: novaFire
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Nova Fire Information Generator
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Christiaan Pauw
+Maintainer: Christiaan Pauw <christiaan.pauw@nova.org.za>
+Description: Fire information is supplied whereby the functions are used to analyze and present various aspects of the household fires
+License: Copyright (c) 2016 Nova Institute (Reg# 1994/002614/08)
 RoxygenNote: 5.0.1

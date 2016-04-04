@@ -10,7 +10,9 @@
 #' @param noFireLabel Character vector. Name indicating inactive fire
 #' @param chimneyField Character vector. Column containing chimney values
 #' @param dateField Character vector. Name of the date column
-#' @param timeStep Numeric. The number of minutes between two consecutive records in the received df
+#' @param timeStep Numeric. The number of minutes between
+#' two consecutive records in the received df
+#' @param verbose Logical. Display function messages?
 #' @details THIS FUNCTION ASSUMES THAT THE ARGUMENT RECEIVED BY DF ARE SORTED
 #' ACCORDING TO DATE/TIME - ASCENDINGLY
 #' @export

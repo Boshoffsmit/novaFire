@@ -1,7 +1,7 @@
 
 # source("C:/Users/Alex H/Dropbox (Nova SA)/Rtemplates/objects.R")
 
-setClass(Class = "standObj", 
+setClass(Class = "standObj",
          slots = list( standNumber = "character",
                        streetNumber = "character",
                        streetName = "character",
@@ -18,8 +18,8 @@ setClass(Class = "houseHoldObj",
                        hhMainMember = "character",
                        contactNumber = "character"))
 
-setClass(Class = "EOPhouseHold", 
-         contains = "houseHoldObj", 
+setClass(Class = "EOPhouseHold",
+         contains = "houseHoldObj",
          slots = list(energyType = "character",
                       insulationType = "character",
                       elecMeterNumber = "ANY",
@@ -30,17 +30,21 @@ setClass(Class = "EOPhouseHold",
                       coalWeighingData = "ANY",
                       ibuttonData = "ANY",
                       DESdata = "ANY"))
-
+#' New EOPhouseHold
+#'
+#' Generate a working traningHhs list
+#'
+#'  @export
 
 new.EOPhouseHold <- function() {
   temp <- new(Class = "EOPhouseHold")
-  
+
   temp@elecData <- list(meta_info = NULL, data_df = NULL)
   temp@coalLog = list(meta_info = NULL, data_df = NULL)
   temp@coalWeighingData = list(meta_info = NULL, data_df = NULL)
   temp@ibuttonData = list(meta_info = NULL, data_df = NULL)
   temp@DESdata = list(meta_info = NULL, data_df = NULL)
-  
+
   return(temp)
 }
 

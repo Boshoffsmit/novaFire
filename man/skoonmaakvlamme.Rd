@@ -21,7 +21,10 @@ skoonmaakvlamme(df = NULL, fireField = "fire", fireLabel = "fire",
 
 \item{dateField}{Character vector. Name of the date column}
 
-\item{timeStep}{Numeric. The number of minutes between two consecutive records in the received df}
+\item{timeStep}{Numeric. The number of minutes between
+two consecutive records in the received df}
+
+\item{verbose}{Logical. Display function messages?}
 }
 \description{
 Function is used to remove the cleaning flame temperatures at the beginning or end of

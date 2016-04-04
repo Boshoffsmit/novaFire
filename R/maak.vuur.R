@@ -40,7 +40,32 @@
 
 #' Strip function
 #'
-#' @export
+ #' @param x Coordinates of points in the plot. Alternatively, a single
+ #' plotting structure, function or any R object with a plot method can be provided
+ #' @param y The y coordinates of points in the plot, optional if x is an appropriate structure.
+ #' @param tp Character vector. The type of plot. Defaults to a point plot. Types are
+ #' "p" for points,
+ #' "l" for lines,
+ #' "b" for both,
+ #' "c" for the lines part alone of "b",
+ #' "o" for both overplotted,
+ #' "h" for histogram like (or high-density) vertical lines,
+ #' "s" for stair steps,
+ #' "S" for other steps,
+ #' "n" for no plotting.
+ #' @param sdif Character vector. Name of the column containing difference between wall and chimney temp
+ #' @param sdifval Numeric. Used in logical as minimum sdif
+ #' @param pcadf Data frame. The PCA data frame
+ #' @param cl Numeric. Contribution. To be used in the contribution slider
+ #' @param clII Numeric. Cos2 contribution. To be used in the cos2 > slider
+ #' @param mn Numeric. To be used for the month slider
+ #' @param nm Character vector. Contribution dimension to be used in picker.
+ #' @param nmII Character vector. Cos2 dimension to be used in picker.
+ #' @param envr Environment under consideration
+ #' @param qplot Logical. Create a qplot or not?
+ #' @param verbose Logical. Display function messages or not?
+ #' @param naam Character vector. Header for graphs
+ #' @export
 
 pl <- function(x = 1:nrow(dpca$ind$contrib), y = dpca$call$X[,sstf], tp = "p", sdif = "sdif", sdifval = 3,
                pcadf = cluscont, cl, clII, mn , nm , nmII ,
@@ -70,6 +95,31 @@ pl <- function(x = 1:nrow(dpca$ind$contrib), y = dpca$call$X[,sstf], tp = "p", s
 #'
 #' Function is used to plot data output from the PCA
 #'
+#' @param x Coordinates of points in the plot. Alternatively, a single
+#' plotting structure, function or any R object with a plot method can be provided
+#' @param y The y coordinates of points in the plot, optional if x is an appropriate structure.
+#' @param tp Character vector. The type of plot. Defaults to a point plot. Types are
+#' "p" for points,
+#' "l" for lines,
+#' "b" for both,
+#' "c" for the lines part alone of "b",
+#' "o" for both overplotted,
+#' "h" for histogram like (or high-density) vertical lines,
+#' "s" for stair steps,
+#' "S" for other steps,
+#' "n" for no plotting.
+#' @param sdif Character vector. Name of the column containing difference between wall and chimney temp
+#' @param sdifval Numeric. Used in logical as minimum sdif
+#' @param pcadf Data frame. The PCA data frame
+#' @param cl Numeric. Contribution. To be used in the contribution slider
+#' @param clII Numeric. Cos2 contribution. To be used in the cos2 > slider
+#' @param mn Numeric. To be used for the month slider
+#' @param nm Character vector. Contribution dimension to be used in picker.
+#' @param nmII Character vector. Cos2 dimension to be used in picker.
+#' @param envr Environment under consideration
+#' @param qplot Logical. Create a qplot or not?
+#' @param verbose Logical. Display function messages or not?
+#' @param naam Character vector. Header for graphs
 #' @export
 
 pl.pca <- function(x = dpca$ind$coord[,1], y = ddpca$ind$coord[,2], tp = "p", sdif = "sdif", sdifval = 3,
@@ -102,6 +152,7 @@ pl.pca <- function(x = dpca$ind$coord[,1], y = ddpca$ind$coord[,2], tp = "p", sd
 #' that describes the data. Also makes use of the vuur.diagnoseer.plot function.
 #'
 #' @param df Data frame. Contains fire and temperature data, normally the iButton data
+#' @param aggr Logical. Initialises date aggregation when TRUE
 #' @param drops Character vector. Names of the columns to be dropped
 #' @param datum.naam Character vector. Name of the column containing dates
 #' @param skalleer Logical. If TRUE then data are scaled to unit variance
@@ -268,6 +319,7 @@ vuur.publikasie.plot <- function(x, vuurnaam = "vuur", sdif = "sdif",
 #' Multiple plot function
 #' @param ... Arguments to be passed to/from other methods
 #' @param plotlist A list of ggplot objects
+#' @param file Filename (Not present in this function)
 #' @param cols Numeric. Number of columns in layout
 #' @param layout A matrix specifying the layout. If present, 'cols' is ignored
 #' @details If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
